@@ -1,0 +1,74 @@
+DOM(Document Object Model)
+=> 문서를 접근하는 방법을 표준으로 정의해 놓은것
+ 플랫폼이나 언어에 상관없이 컨텐츠(문자열, 이미지, 양식태그 등 웹 문서를 구성하는 구성요소)
+  구조를 동적으로 업데이트 하고 액세스 할 수 있도록 W3C에서 표준으로 정의해 놓은 문서 접근방법(html,xml모두 적용)
+                            -----
+                    World Wide Web Consortium
+                    	웹 표준화를 위한 국제 표준화기구
+						브라우저  내부에서 html이나 css명세에 따라서 hmtl을 해석해서 표시하는데
+						이 명세를 w3c에서 정한다.
+						(HTML5는 액티브 X를 점점 없애기 위함이며, 안드로이드도 이것을 사용하기도 한다.)
+						
+						
+1) DOM의 구성요소
+	- element(엘리먼트) : html문서를 구성하는 컨텐츠
+	- attribute(속성) : 태그 내부에서 정의되어 있는 속성
+	- document : DOM객체의 가장 상위의 객체
+	- text(텍스트) : 태그와 태그 사이에 입력한 문자열. 공백도 문자열 객체로 인식.
+	
+2) DOM의 속성
+	- nodeName : 노드의 이름(엘리먼트와 동일)
+	- nodeValue : 노드의 값
+	- childNodes : 하나의 노드 밑에 형성된 자식 노드들
+					List의 형태로 반환 - 배열로 관리, HTML문서에 정의된 순서대로 배열에 저장된다.
+	- firstChild : 첫번째 자식노드
+	- lastChild : 마지막 자식노드
+	
+3) DOM에서 사용하는 메소드
+	- getElementById("id명") : id로 정의된 객체를 반환
+								단일 객체에 동적 작업을 수행
+	- getElementByTagName("태그명") : 태그에 해당하는 모든 객체를 노드 List의 형태로 반환
+									배열로 관리.
+	- getAttribute("속성명") : 속성에 정의되어 있는 값이 리턴
+	- setAttribute("속성명", "값") : 특정객체의 속성을 정의한 값으로 설정하여 변경
+	- appendChild("노드명") : 해당 노드를 삽입
+	      ⓘ 삽입될 노드를 생성 - createElement or createTextNode
+	      ② 삽입될 위치 노드를 구하기
+	      ③ 노드를 추가
+	
+	- insertBefore(노드명, target노드)
+		          -----  ---------
+		   		    추가될 노드		|_ 삽입될 위치의 노드 - 형제노드
+		: appendChild와 동일하게 동작
+		: appendChild는 맨 뒤에 삽입되지만 insertBefore는 중간에 삽입될 위치를 정할수 있다.
+			삽입될 위치에 대한 정보가 target노드에 추가된다.		   		    
+
+	
+	- createElement("엘리먼트") : 엘리먼트를 생성
+	- createTextNode() : 텍스트노드를 생성
+	- removeChild(노드명) : " 노드를 삭제
+	
+		부모노드.removeChild(삭제할 노드명)
+		: 부모노드에서 삭제할 노드를 찾아서 삭제하겠다.
+	
+4) 자동실행
+자바스크립트 함수나 명령문을 일정 시간이 지난 후에 자동으로 실행할 수 있도록 지원하는 메소드
+
+	setTimout
+	자바스크립트 명령문이나 함수를 일정 시간이 지난 후에 한번만 자동으로 실행하는 메소드
+	[문법]
+	작업 id = setTimeout("실행할 자바스크립트 명령문 or 함수명", millisecond)
+	           -------------------------
+	           	함수를 호출하는 경우 함수명만 명시
+	=> 지정한 millisecond의 시간이 경과하면 자동으로 자바스크립트 명령문을 실행(한 번만)
+		작업 id를 clear시켜서 작업을 해제할 수 있다.
+	
+	setInterval
+	[문법]
+	작업id = setInterval("실행할 자바스크립트 명령문 or 함수명", millisecond)
+	=> 구문이나 동작방식은 setTimeout과 동일하나 setInterval은 지정한
+		millisecond 간격으로 자동으로 반복실행
+		반복실행되는 작업을 해제하기 위해서 작업id를 저장하고	해제
+	
+	clearTimeout/cleaInterval(해제할 작업의 id 명시)
+	=> 매개변수로 전달된 작업 id에 해당하는 작업을 종료

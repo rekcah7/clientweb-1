@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		<input type="button" value="1번버튼" id="btn1"/>
+		<input type="button" value="2번버튼" id="btn2"/>
+		<input type="button" value="3번버튼" id="btn3"/>
+		<input type="button" value="4번버튼" id="btn4"/>
+	</form>
+	
+	<script type="text/javascript">
+		//페이지가 로딩된 후에 자바스크립트 명령문을 실행하겠다는 의미.
+		window.onload = function(){
+			alert("테스트");
+	
+		
+			
+			
+				document.getElementById("btn1").onclick = function(){
+					alert("눌려짐?");
+				}
+				
+				//이게 callback이다. 자바스크립트에서 사용하자는 권고사항
+				document.getElementById("btn2").onclick = test2	//함수명만 기입
+				//명시한다고 해서 바로 시작되는게 아니라 적절한 시간 및 이벤트가 발생할때 실행됨
+				//즉, () 열고 닫고를 안한다.
+				
+				
+				document.getElementById("btn3").onclick = function(){
+					alert("눌려짐?");
+				}
+				
+				document.getElementById("btn4").onclick = function(){
+					alert("눌려짐");
+					test2();	//함수의 명시적 호출
+				} 
+				function test2(){
+					alert("버튼2가눌러짐 callback으로 호출")}
+				}
+			
+	
+	</script>
+</body>
+</html>

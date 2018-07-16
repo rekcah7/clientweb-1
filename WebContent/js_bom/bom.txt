@@ -1,0 +1,52 @@
+브라우저 객체모델(BOM)
+	- 웹페이지를 구성하는 모든 콘텐츠를 접근하는 방법
+	- window
+	- document
+	- form(양식태그)
+	- image
+	
+	1) html태그로 정의되는 요소를 객체로 정의하고 사용하기 위해서 name 속성을 정의해야 한다.
+	2) 모든 브라우저 객체는 계층구조를 가지고 있다.
+	
+	ex) <body>
+			<form name="myform">
+				<input type="text" name="id"/>
+			</form>
+		</body>
+		
+		window.document.myform.id;
+       ----------------
+       		|_ BOM을 이용하면 window,document는 늘 접근해야 하는 객체이므로
+       			생략이 가능. window 객체는 생략가능 document객체명은 경우에 따라서 생략가능.
+       		
+	- HTML로 웹페이지를 구성하는 컨텐츠를 정의한다.
+	- CSS를 이용해서 레이아웃과 서식을 정의
+				-----
+				   |_정의된 컨텐츠가 어디에 배치되어야 하는지 정의
+	- javascript를 이용해서 웹 페이지의 컨텐츠가 어떤 동작을 하는지 구현.
+1. window 객체
+    [메소드]
+    1) 대화상자 관련
+    	alert : 안내창
+    	prompt : 사용자로부터 입력을 받기 위한 창   	
+    	confirm : 상호작용을 위한 선택창(선택에 따라서 true/false)
+    	
+    2) Poupup 관련
+    	open() : 새창을 실행
+    		변수 = window.open("새로 open할 창의 path:,"팝업창의 이름", "옵션");
+															-----
+															창이 보여질 위치
+															창의 크기
+															창에 표시될 구성요소
+															오픈된 window 객체    		                                         
+    		                                         
+    	close() : 창을 close
+    	opener객체 : popup창을 띄워준 부모창
+    
+    3) 데이터 처리
+    	parseInt : 숫자모양을 한 문자열을 숫자로 변환
+    	isNaN : 입력한 글자가 숫자인지 문자인지 판단(문자 : true, 숫자:false)
+    	eval : 매개변수로 전달된 데이터를 실제로 실행
+    	trim : 공백을 제거
+    4) 자동실행
+       		

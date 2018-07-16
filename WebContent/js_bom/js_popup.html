@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function showData(zip, addr){
+		//부모창에 선택한 주소에 대한 상세주소와 우편번호를 출력
+		//value => 텍스트 상자의 값
+		//변수 = zipcode.value()
+		alert(zip);
+		alert(addr);
+	
+		//위가 지금범위로 할수 있는 디버깅
+		opener.document.kitri.zipcode.value=zip;
+		opener.document.kitri.address.value=addr;
+		window.close();	//창닫기
+	}
+	function test(){
+		document.mypopup.addr.value = 
+			opener.document.kitri.id.value;
+	}
+	
+</script>
+</head>
+
+<!-- 폼이 로딩되는 시점 -->
+<body bgcolor="skyblue" onload="test()">
+<form action="search.jsp" name="mypopup">
+	<input type="text" name="addr"/>
+	<input type="submit" value="검색"/>
+	
+</form>
+<!-- DB에  -->
+	<!-- <a href="javascript:함수(특별한값)">구로동</a><br/> -->
+	<a href="javascript:showData('111-111','서울시구로동')">구로동</a><br/>
+	<a href="javascript:showData('222-222','서울시서초동')">서초동</a><br/>
+	<a href="javascript:showData('333-333','서울시방배동')">방배동</a><br/>
+	<a href="javascript:showData('444-444','인천시주안동')">주안동</a><br/>
+	<a href="javascript:showData('555-555','광역시개포동')">개포동</a><br/>
+	<!-- window.~~~하면 나를 지칭
+	오프너로 할려면 ㅍ -->
+</body>
+</html>

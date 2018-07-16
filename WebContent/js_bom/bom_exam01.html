@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+		
+		function calc(){	//계산을 위한 함수
+			//count값 가져오라
+			countVal = myform.count.value;
+		
+			//뽑아온 값에다가 10%할인율
+			result = countVal * 12900 * 0.9;
+			
+			//화면에 출력
+			document.getElementById("sumVal").innerHTML = result;
+		}
+		
+</script>
+</head>
+<body>
+	<form name="myform">
+	<!-- 입력할때마다 이벤트 될려고 할때 onkey 이벤트 사용 -->
+	수량 : <input type="text" name="count" onkeyup="calc()">
+	<span id="sumVal"></span> <!-- 오른쪽 화면에 출력하는 위치 -->
+	</form>
+	
+	
+	<script type="text/javascript">
+	
+	</script>
+</body>
+</html>

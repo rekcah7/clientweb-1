@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<script type="text/javascript">
+	//자바스크립트 배열
+	myarr = new Array(5);	//5개의 요소를 갖는 배열객체를 생성
+	myarr[0] = "jquery";
+	myarr[1] = "servlet";
+	myarr[2] = "jsp";
+	myarr[3] = "ajax";
+	myarr[4] = "bootstrap";
+	document.write("<h3>" + myarr[1] + "</h3>");	
+	document.write("<h3>" + myarr.length + "</h3>");//요소갯수 출력
+	
+	for(i=0; i<myarr.length; i++){
+		document.write("<h3>" + myarr[i] + "</h3>");
+	}
+	document.write("<h3>" + myarr.join(",") + "</h3>");
+	document.write("<h3>" + myarr.reverse() + "</h3>");	//거꾸로 출력
+	document.write("<h3>" + myarr.sort() + "</h3>");	//abc 순으로
+	
+	//배열의 선언과 생성과 초기화를 동시에 작업하기
+	myarr2 = new Array(30,31,28,22,20);
+	for(i=0; i<myarr2.length;i++){
+		document.write("<h3>"+myarr2[i]+"</h3>");
+	}
+	
+	</script>
+</body>
+</html>

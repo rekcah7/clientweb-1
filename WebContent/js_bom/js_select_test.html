@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	function selectTest(myform){
+		index = myform.tel.selectedIndex;
+		alert(index);
+		alert(myform.tel.options[index].value);	//value속성에 정의되어 있는 값이고
+		alert(myform.tel.options[index].text);	//text는 select에 보여지는 문자열
+	}
+	
+	</script>
+</head>
+<body>
+	<form name="selfmt">
+		<select name="tel" onchange="selectTest(this.form)"> <!-- 온첸지=바뀌는순간 -->
+			<option value="default">핸드폰식별번호</option>
+			<option value="공일공">010</option>
+			<option value="011">011</option>
+			<option value="016">016</option>
+			<option value="017">017</option>
+			<option value="018">018</option>
+			<option value="019">019</option>
+		</select>
+	</form>
+</body>
+</html>

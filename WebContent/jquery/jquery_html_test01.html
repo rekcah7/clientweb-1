@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+<!-- <script type="text/javascript" 
+		src="../common/js/jquery-1.11.3.js"> </script> -->
+<script src="../common/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<div id="main">
+	<div class="test1">jquery~~~</div>
+	<div class="test2">jquery~~~~</div>
+	<div id="test3">jquery~~~~</div>
+	<div id="test4">jquery~~~~</div>
+	<div id="test5">jquery~~~~</div>
+	<a id="attrtest">하이퍼링크</a>
+	<a id="attrtest2">하이퍼링크2</a>
+	</div>
+	<div id="result"></div>
+	<form>
+		<input type="button" id="htmlbtn" value="html태그 추가하기"/>
+		<input type="button" id="attrbtn" value="속성추가하기"/>
+	</form>
+	<script type="text/javascript">
+		//DOM 노드 액세스
+		$(document).ready(function(){
+			$("#htmlbtn").on("click", function(){
+				$("#result").html("<h1>추가되는 문자열</h1>");
+			});
+			$("#attrbtn").on("click", function(){	//해당에서 실행
+				$("#attrtest").attr("href","http://www.naver.com");
+				alert($("#result").attr("id"));//id result로 정의된
+											//div 태그의 id 속성을 출력
+											
+				$("#attrtest2").attr({				//새창을 만들어서 실행
+					"href":"http://www.kitri.re.kr",
+					"target":"_blank"
+				});	//json방식 - 여러개를 정의할 수 있는 방식
+			});
+		});
+
+	</script>
+</body>
+</html>
+
+
+

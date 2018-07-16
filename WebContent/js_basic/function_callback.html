@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>callback함수</h1>
+	<input type="button" value="버튼" id="btn">
+	<p>
+		앞에서 표현식으로 정의했던 익명함수는 보통 callback함수로 쓰여지기도 한다.
+		함수를 호출할때 호출시저믈 결정해서 바로 함수호출문을 명시하는 것이 아니라
+		이벤트가 발생하거나 특정 시간이 흐르거나 어떤 상황에 놓였을때 시스템 내부에서 함수가 실행되어야 하는
+		시점이 되면 함수가 자동으로 실행되는 것을 의미, 즉 개발자가 함수의 실행시점을 명시적으로 정의하는 것이
+		아닌 함수들은 모두 callback함수
+		어떤 함수의 매개변수로 넘기는 함수도 callback함수로 정의(setInterval이나 setTimeout등에서 사용될때)
+		
+		
+	</p>
+	이벤트가 발생하는 객체, 이벤트명 = function(){<br/>
+		//이벤트가 발생할 때 처리할 문장<br/>
+	}<br/>
+	<script type="text/javascript">
+		//익명의 콜백 함수로 표현
+		//콜백
+		window.onload = function(){	//표현식인데 앞에 이벤트가 옴
+			alert("페이지로딩");
+			document.getElementById("btn").onclick = function(){
+				alert("버튼이 눌러짐");
+			}
+		}
+		
+	</script>
+</body>
+</html>
+
+
+
+

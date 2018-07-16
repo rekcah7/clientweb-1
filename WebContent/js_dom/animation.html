@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	#outer{
+		width: 500px;
+		height: 500px;
+		position: relative;	/* outer의 하위가 왼쪽위를 기준으로 잡지 않고 
+							outer를 기준으로 위치값을 작성한다. */
+		background: yellow;
+	}
+	#inner{
+		width: 50px;
+		height: 50px;
+		background: blue;
+		position: absolute;	/* 상대적으로 위치값을 상위로 받음 */
+	}
+	
+</style>
+
+
+</head>
+<body>
+	<h1>애니메이션 적용</h1>
+	<div>
+		<input type="button" value="애니메이션시작" onclick="innerMove()">
+		
+	</div>
+	<div id="outer">
+		<div id="inner"></div>
+	</div>
+
+	<script type="text/javascript">
+			function innerMove(){
+				//alert("innerMove");
+				innerRect = document.getElementById("inner");
+				innerPosition = 0;  //버튼이 눌려질때마다 
+				id = window.setInterval(annimation, 10);
+			}
+			function annimation(){	//계속 이동하게 될텐데 중간에 setInterval값을 조정해줘야 범위가 완성된다.
+				if(innerPosition==450){
+					clearInterval(id);
+				}else{
+					innerPosition++;
+					innerRect.style.top = innerPosition+"px";
+					innerRect.style.left = innerPosition+"px";
+				}	
+			}
+	
+	</script>
+
+
+</body>
+</html>

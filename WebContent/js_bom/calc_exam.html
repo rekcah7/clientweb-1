@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title> New Document </title>
+<script type="text/javascript">
+//1. 버튼 누르면 텍스트 창에 누적되는것
+//2. 연산기능
+//3. 출력기능
+	function button_click(val){ //button	val
+	//누적 시키는 작업(숫자)
+	myform.mytext.value = myform.mytext.value + val;	//값이랑 버튼이랑
+}
+	function compute(){ //계산함수
+		result = eval(myform.mytext.value);	//조사해보자
+		myform.mytext.value = result;
+		document.getElementById("resultVal").innerHTML = result;
+	}
+	function clear_del(){	//초기화 하는 함수
+		myform.mytext.value ="";
+	//body 태그내에서 resultVal라는 id로 정의된 <div> 태그 내에 계산결과를 출력
+	//=> resultVal라는 id로 정의된 엘리먼트를 찾아오기
+	//innerHTML 표준 아닌 속성
+	}
+	
+</script>
+</HEAD>
+
+<BODY>
+<br>
+<br>
+<br>
+<h1>계산기 활용 예</h1>
+<div id = "resultVal" 
+style="font-size: 14pt; font-weight: bold; color: red;"></div> 
+
+<form name="myform">
+
+<table border="1">
+	<tr>
+		<td colspan="4"><input type="text" size="28" name="mytext"></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="   7   " onclick="button_click('7')"></td>
+		<td><input type="button" value="   8   " onclick="button_click('8')"></td>
+		<td><input type="button" value="   9   " onclick="button_click('9')"></td>
+		<td><input type="button" value="   /   " onclick="button_click('/')"></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="   4   " onclick="button_click('4')"></td>
+		<td><input type="button" value="   5   " onclick="button_click('5')"></td>
+		<td><input type="button" value="   6   " onclick="button_click('6')"></td>
+		<td><input type="button" value="   *   " onclick="button_click('*')"></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="   1   " onclick="button_click('1')"></td>
+		<td><input type="button" value="   2   " onclick="button_click('2')"></td>
+		<td><input type="button" value="   3   " onclick="button_click('3')"></td>
+		<td><input type="button" value="   -   " onclick="button_click('-')"></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="   0   " onclick="button_click('0')"></td>
+		<td><input type="button" value="   .    " onclick="button_click('.')"></td>
+		<td><input type="button" value="   +   " onclick="button_click('+')"></td>
+		<td><input type="button" value="   %  " onclick="button_click('%')"></td>
+	</tr>
+	<tr>
+		<td  colspan="2"><input type="button" value="  계산하기  " onclick="compute()"></td>
+		<td  colspan="2"><input type="button" value="   지우기    " onclick="clear_del()"></td>
+	</tr>
+</table>
+</form>
+</BODY>
+</HTML>

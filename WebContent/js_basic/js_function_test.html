@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//함수를 선언하고 호출해서 사용하는 방법
+	//1. 리턴값이 없고 매개변수가 없는 함수 
+	function test1(){
+		num1 = 100;
+		num2 = 200;
+		alert(num1+num2);
+	}
+	
+	//2. 리턴값이 있고 매개변수가 없는 함수
+	//===> 리턴값이 있는 경우 자바처럼 return명령문을 이용해서 값을 리턴하면 된다. 리턴타입이
+	//		없을뿐 자바와 동일
+	function test2(){
+		num1 = 200;
+		num2 = 300;
+		result = num1+num2;
+		return result;
+		//자바에서 처럼 마지막 문장에서 return문을 이용해서 리턴
+	}
+	
+	//3. 리턴값이 없고 매개변수가 있는 함수
+	function test3(num1,num2){
+		result = num1 + num2;
+		alert("function3 =>" + result);
+	}
+	
+</script>
+
+</head>
+<body>
+	<script type="text/javascript">
+	//<head> 태그에 선언된 함수를 호출
+	//1. 리턴값이 없고 매개변수가 없는 함수를 호출
+	test1();
+	//2. 리턴값이 있고 매개변수가 없는 함수를 호출
+	returnVal = test2();//자바처럼 변수를 선언해써 return 값을 저장
+	document.write("실행결과 =>" + returnVal);
+	//3. 매개변수가 있는 함수 호출
+	test3(100,500);
+	
+	//4. 매개변수에 해당하는 값을 사용자로부터 입력받아서 처리
+	
+	num1=parseInt(window.prompt("prompt를 통해서 값을 입력받기. 숫자 입력"));
+	num2=parseInt(window.prompt("prompt를 통해서 값을 입력받기. 숫자 입력"));
+	/* num2=window.prompt("prompt를 통해서 값을 입력받기. 숫자 입력"); */
+	window.alert(num1+num2);
+	
+	
+	</script>
+
+</body>
+</html>

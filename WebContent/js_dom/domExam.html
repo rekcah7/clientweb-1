@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function insertP(){		//추가 라인
+		var pNode = document.createElement("p");	//엘리먼트 값 => 태그
+		pNode.setAttribute("style", "background:yellow");
+		
+		var textNode = document.createTextNode("newP");
+		parentNode = document.getElementById("root");
+		
+		pNode.appendChild(textNode);
+		parentNode.appendChild(pNode);
+	}
+	function deleteP(){
+		parentNode = document.getElementById("root");
+		if(parentNode.lastChild.nodeName=="#text"){
+			parentNode.removeChild(parentNode.lastChild);
+		}
+		parentNode.removeChild(parentNode.lastChild);
+	}
+	
+	//for문으로 deleteAll 만들기(18.07.02 미션)
+	function deleteDivAndP(){
+		//alert("테스트");
+		parentNode = document.getElementById("root");	//root걸 다 받고
+		nodelist = parentNode.childNodes;				//nodelist에 
+		size = nodelist.length;			//삭제해도 사이즈 변경 없기 위한 
+		
+		/* while(parentNode.hasChildNodes()){//자식노드가 있니?
+				parentNode.removeChild(parentNode.lastChild);
+		} */
+		for(i=0; i<size; i++){		//그냥하면 다 지워지지 않는다. 1. alert으로 확인
+			//alert(nodelist.length);
+			//alert(size);		
+			parentNode.removeChild(parentNode.lastChild)
+		}
+	}
+	
+</script>
+
+</head>
+<body>
+	<div id="layer"></div>
+
+	<hr>
+	<form></form>
+	<div id="root">
+		<p style="background: gray;">line01</p>
+		<p style="background: skyblue">line02</p>
+		<p style="background: green;">line03</p>
+		<p style="background: red;">line04</p>
+		
+	</div>
+
+	<hr>
+	<button onclick="insertP()" >P태그추가하기</button>
+	<button onclick="deleteP()" >P태그삭제하기</button>
+	<button onclick="deleteDivAndP()" >div안의 모든 p태그 삭제하기</button>
+	<button onclick="innerHTML_test()">innerHTML</button>
+
+
+</body>
+</html>

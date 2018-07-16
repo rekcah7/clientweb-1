@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+		function idCheck(form){ //폼 받아야하니까
+			id = form.id.value;	//입력값 문자열
+			
+			//브라우저 객체도 자바스크립트에서 변수로 정의하고 사용할수 있다.
+			resultDiv = document.getElementById("result");
+			//alert(resultDiv);
+			
+			//div에 출력할 문자열을 저장할 변수
+			str="";
+			if(id.length<4){
+				str = "4글자 이상의 글자 입력 바랍니다";
+			}else{
+				//기존의 존재하는 아이디인지 평가(Ajax처리 - DB연동)
+				if(id=="java"){
+					str="이미 사용중인 아이디입니다";
+				}else{
+					str="사용가능한 아이디입니다.";
+				}
+			}
+			resultDiv.innerHTML = str;
+			
+			//idVal = myform.mytext.value;
+			//document.getElementById("mytext").innerHTML = idVal; 
+		}
+		
+		
+</script>
+</head>
+<body>
+	<h1 >티몬 회원가입</h1>
+	<h3>필수 항목</h3>
+
+	<form name="myform">
+	<!-- 입력할때마다 이벤트 될려고 할때 onkey 이벤트 사용 -->
+	
+	아이디 <input type="text" name="id" onkeyup="idCheck(this.form)"> <!-- ==myform.id. 폼이 여러개일때 -->
+	<!-- 밑으로 내려가게한다 -->
+	<div id="result" style="color: red; font-weight: bold;"></div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>side_navigation</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" 
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<style>
+		/* 사이드바 스타일 */
+		.sidenav {
+			height:100%;
+			width: 0;
+			position: fixed;
+			z-index:1;
+			top: 0;
+			left: 0;
+			background-color: rgb(0,154,200);
+			overflow-x: hidden;				/* 가로부분을 안보이게 숨겨두겠다는 뜻 */
+			transition:0.5s ease-in-out;
+			padding-top: 60px;
+		}
+		.sidenav a {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 25px;
+			color: #fff;
+			display: block;		/* 안보이게 블록 걸어둔것 */
+			transition: 0.2s ease-in-out;
+			width: 20px;
+			overflow: visible;
+		}
+		.sidenav a:hover, .offcanvas a:focus {
+			color: #000;
+		}
+		.closebtn {
+			position: absolute;
+			top: 0;
+			right: 25px;
+			font-size: 36px !important;
+			margin-left: 50px;
+		}
+		.openmenu:hover {
+			color:rgb(0,154,200);
+			transition:0.5s ease-in-out;
+		}
+		.openmenu {
+			font-size: 25px;
+			cursor:pointer;
+			transition:0.5s ease-in-out;			
+		}
+		.openmenu > i {
+			font-size: 30px;
+		}
+		#main {
+			transition:0.5s ease-in-out;
+		}
+	
+	</style>
+</head>
+<body>
+	<div id="mysidenav" class="sidenav">
+		<a href="#" class="closebtn" id="closeNav">x</a>
+		<a href="#">홈</a>
+		<a href="#">자바</a>
+		<a href="#">서블릿&JSP</a>
+		<a href="#">빅데이터</a>
+		<a href="#">라즈베리파이</a>
+	</div>
+	<div id="main">
+		<h2>장동건</h2>
+		<hr/>
+		<img src="../images/jang.jpg"/>
+	</div>
+	<span class="openmenu" id="openNav">
+	<i class="fa fa-angle-double-left fa-5" aria-hidden="true"></i> 메뉴</span>
+
+	<script>
+		$(document).ready(function(){
+			$("#openNav").on("click", function(){
+				$("#mysidenav").css("wdith", "250px");
+				$("#main").css("marginLeft", "260px");
+			});
+			$("#closeNav").on("click", function(){
+				$("#mysidenav").css("wdith", "0px");
+				$("#main").css("marginLeft", "0px");
+			});
+		});
+	</script>
+</body>
+</html>

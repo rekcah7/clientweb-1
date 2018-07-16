@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../common/css/my_style.css">
+
+</head>
+<body>
+	<div id="clickMe">여기를 누르세요.</div>
+	<div id="picframe">
+		<img src="../images/m_garden01.jpg"/>
+	</div>
+	
+	<script type="text/javascript"
+	src="../common/js/jquery-3.2.1.min.js">	//2. 집어넣으면 에러는 사라짐.
+		$(document).ready(function(){	//1. jquery 라이브러리 없으면 $ 에러
+			$("#clickMe").click(function(){
+				$("#pickframe").slideToggle();		//#선택자
+			});		//이벤트
+		});
+
+</script>
+	
+	
+</body>
+</html>

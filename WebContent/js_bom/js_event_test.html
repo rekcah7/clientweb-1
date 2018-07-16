@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	function calc(){
+		mynum1 = myform.num1.value ; //getter
+		myform.num2.value = mynum1 * 1.2; //setter
+	}
+	
+	function shodData(workingform){	//같은 form안에서 이름 다르게
+		mynum1 = workingform.num1.value ; //getter
+		workingform.num2.value = mynum1 * 1.2; //setter
+	}
+	function formexec(workingform){
+		//button을 submit버튼처럼 활용
+		workingform.submit();
+	}
+		
+	</script>
+</head>
+<body onload="alert('반갑습니다')">	<!-- 실행하면 바로 메시지 -->
+	<form name="myform">
+		<input type="text" name="num1" onchange="calc()"/>
+		<input type="text" name="num2"/>
+		<input type="button" value="전송1" onclick="formexec(this.form)"/>
+		<input type="button" value="전송2"/>
+		
+	</form>
+	<form name="myform2">
+		<input type="text" name="num1" onkeyup="showData(this.form)"/>
+		<input type="text" name="num2"/>
+		<input type="button" value="전송1" onclick="formexec()"/>
+		<input type="button" value="전송2"/>
+		
+	</form>
+	<form name="myform3">
+		<input type="text" name="num1" onkeyup="showData(this.form)"/>
+		<input type="text" name="num2"/>
+		<input type="button" value="전송1" onclick="formexec(this.form)"/>
+		<input type="submit" value="전송2"/>
+	</form>
+	<img src="../images/ses_g1.jpg" name="myimg"
+	  		onmouseover="myimg.src='../images/ses_g2.jpg'"
+	  		onmouseout="myimg.src='../images/ses_g1.jpg'"/>  <!-- 마우스올려놨을때 -->
+	
+</body>
+</html>

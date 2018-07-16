@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR"/>
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		background-image: url("../images/garden01.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;	/*auto-원본
+							cover - 박스의 너비나 높이 중에서 큰값에 100%
+							맞추고 이미지 비율을 유지하기 때문에 이미지 짤림
+							400px로 정의하면 width를 줄이고 height는 
+							자동조절 된다.*/
+	}
+	#mydiv1{
+		background-image: url("../images/garden01.jpg");
+		background-size: 100% 100%;	/*auto-원본*/
+		position: absolute; /* 절대위치를 잡겠다는 소리*/
+		top: 100px;
+		left: 100px;
+		width: 500px;
+		height: 400px;
+		background-color: aqua;
+		border-color: blue;
+		border-style: solid;
+		border-width: 5px;
+		z-index: 2;	/* 그려지는 순서 */
+	}
+	
+	#mydiv2{
+		position: absolute;	/* 전체적인 레이아웃에는 적합하지 않다 */
+		top: 150px;
+		left: 150px;
+		width: 500px;
+		height: 400px;
+		background-color: blue;
+		border-color: aqua;
+		border-style: solid;
+		border-width: 5px;
+		z-index: 1;
+	}
+
+</style>
+
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	지금은 박스모델연습 시간입니다. <div>div태그와 span태그</div>의 차이점을 먼저 살펴봅시다.
+	지금은 박스모델연습 시간입니다. <span>div태그와 span태그</span>의 차이점을 먼저 살펴봅시다.
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

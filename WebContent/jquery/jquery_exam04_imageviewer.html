@@ -1,0 +1,66 @@
+
+<html>
+<head>
+<title>Stick Figure Adventure</title>
+
+<script src="../common/js/jquery-3.2.1.min.js">
+</script>
+</head>
+<body>
+	<div style="text-align: center; font-family: HY견고딕; line-height: 1.6em">버튼을
+		누르세요:</div>
+	<div 
+	style="text-align: center; font-family: HY견고딕; 
+	line-height: 1.6em" id="gardentext"></div>
+	
+	<div style="text-align: center">
+		<input type="button" id="prebtn" value=" << " />
+		<img id="gardenImg" src="" alt="아침고요수목원"
+			style="vertical-align: middle;" /> 
+		<input type="button" id="nextbtn" value=" >> "/>
+	</div>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			imageNum = 1;
+			lastNum = 9;		//java코드를 이용해서 자동으로 받아오는 작업
+			
+			$("#gardenImg").attr("src","../images/m_garden0"
+					 + imageNum+".jpg");
+
+			//alert("test");
+			//myimage = "<img src='../image/m_garden01.jpg'/>";
+			$("#prebtn").on("click", function(){
+				//alert("test");
+				//$("#gardenImg").attr("src","../images/m_garden01.jpg");
+				//$(this).append(myimage);
+				
+											//이벤트 안에서 처리되는 로직은
+											//중복되므로 함수로 처리하고 call해서 사용
+				if(imageNum>1){
+					imageNum--;
+				}else{
+					imageNum =1;
+					alert("처음 이미지입니다")
+				}
+				$("#gardenImg").attr("src","../images/m_garden0"
+						 + imageNum+".jpg");
+		
+			});
+			
+			$("#nextbtn").on("click", function(){
+				//alert("test2");
+				if(imageNum<9){
+					imageNum++;
+				}else{
+					imageNum =9;
+					alert("마지막 이미지입니다")
+				}
+				$("#gardenImg").attr("src","../images/m_garden0"
+						 + imageNum+".jpg");
+				
+			});
+		});
+	</script>
+</body>
+</html>

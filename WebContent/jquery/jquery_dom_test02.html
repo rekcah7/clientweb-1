@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+<!-- <script type="text/javascript" 
+		src="../common/js/jquery-1.11.3.js"> </script> -->
+<script src="../common/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<div id="main">
+	<div class="test1">jquery~~~</div>
+	<div class="test2">jquery~~~~</div>
+	<div id="test3">jquery~~~~</div>
+	<div id="test4">jquery~~~~</div>
+	<div id="test5">jquery~~~~</div>
+	</div>
+	<form>
+		<input type="button" id="nodetest" value="노드가져오기"/>
+	</form>
+	<script type="text/javascript">
+		//DOM 노드 액세스
+		$(document).ready(function(){
+			$("#nodetest").on("click",function(){
+				//특정 노드의 하위노드를 모두 가져오기
+				//children()는 특정 노드의 모든 자식 노드를 가져오기
+				//last() : lastChild와 같다.
+				//first() : firstChild와 같다.
+				
+				//메소드 체이닝이 가능 => 메소드의 실행결과로 다시 메소드를 체인처럼 호출하는 방식
+				//변수 선언 
+				list = $("#main").children();
+				alert(list.length);
+				$("#main").children().css("color","orange");
+				$("#main").children().last().css("color","blue");
+				$("#main").children().first().css("color","red");
+			});
+		});
+		
+	
+	
+		/*text()->요소의 텍스트 반환
+		  html()->선택한 요소의 html태그가 포함된 컨텐츠 반환
+		  val()->입력필드의 값을 반환
+		  attr()->요소의 속성을 반환
+		  position()-> 요소의 위치 반환
+		*/
+	</script>
+</body>
+</html>
+
+
+

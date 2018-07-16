@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function showTime(){
+		
+		today = new Date();
+		
+		timeVal = today.getHours() + "시";
+		timeVal = timeVal + today.getMinutes() + "분";
+		timeVal = timeVal + today.getSeconds() + "초"
+
+		myform.time.value = timeVal;	//time 텍스트에 timeVal 값을 집어 넣는다.
+		
+	}
+	function run(){
+		/* window.setTimeout("location.href='http://www.naver.com'", 2000); */
+		/* 2초가 흐른뒤에 주소표시줄에 naver.com을 입력해서 이동하라(한번만 실행된다) */
+		
+		//window.setTimeout(showTime(), 2000); /* 이 위치에서 showTime을 호출하겠다 */
+		timeid = window.setInterval(showTime, 1000);
+	}
+	function stop(){
+		clearTimeout(timeid)
+	}
+	
+	
+
+</script>
+</head>
+<body onload="showTime()">
+	<form name="myform">
+		<input type="text" name="time">
+		<input type="button" value="시작" onclick="run()">
+		<input type="button" value="중지" onclick="stop()">		
+	</form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		<input type="button" value="1번버튼" id="btn1"/>
+		<input type="button" value="2번버튼" id="btn2"/>
+		<input type="button" value="3번버튼" id="btn3"/>
+		<input type="button" value="4번버튼" id="btn4"/>
+	</form>
+	
+	<script type="text/javascript">
+		//페이지가 로딩된 후에 자바스크립트 명령문을 실행하겠다는 의미.
+		window.onload = function(){
+			alert("테스트");
+	
+			document.getElementById("btn1").onclick = function(){
+				alert("눌려짐?");
+			}
+			
+			
+			
+				/* document.getElementById("btn1").onclick = function(){
+					alert("눌려짐?");
+				}
+				
+				document.getElementById("btn2").onclick = function(){
+					alert("눌려짐?");
+				}
+				
+				document.getElementById("btn3").onclick = function(){
+					alert("눌려짐?");
+				}
+				
+				document.getElementById("btn4").onclick = function(){
+					alert("눌려짐?");
+				} */
+			
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>jquery</title> 
+		<link rel="stylesheet" href="../common/css/my_style2.css"></link>
+		<script src="../common/js/jquery-3.2.1.min.js"></script>
+		
+	</head> 
+	<body>
+		<div id="header">
+			<h2>아침고요수목원~</h2>
+		</div>
+		<div id="main">
+			<div class="gardenimg"><img src="../images/m_garden01.jpg" /></div>
+			<div class="gardenimg"><img src="../images/m_garden02.jpg"/></div>
+			<div class="gardenimg"><img src="../images/m_garden03.jpg"/></div>
+			<div class="gardenimg"><img src="../images/m_garden05.jpg"/></div>
+		</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//imgVal = 
+				/* $("#main").on("onmouseover", function(){
+					$("#main").text("Math.random()+1");
+				}); */
+				
+				//class를 id식으로 사용하네?
+				$(".gardenimg").on("mouseover", function(){
+					//alert("test");
+					
+					//garden이미지에 있는것들을 모두 지운다.
+					$(".gardenimg p").remove();
+					
+					count = Math.floor((Math.random()*100)+500);
+					//1.1쌓이는 이유는 p떄문
+					myelement = "<p>방문자수:" + count+"</p>";
+					
+					//이미지 밑에 추가할때
+					$(this).append(myelement);
+					
+					
+				});
+			});	
+		 
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

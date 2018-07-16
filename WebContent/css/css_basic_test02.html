@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<!--해당 link태그는 문서에서 스타일시트에 관련된 태그입니다 라는 의미.-->
+<!-- <link rel="stylesheet" type="text/css"
+		href="../common/css/mystyle.css"> -->
+
+<style type="text/css">
+	div a{/*하위 앨리먼트*/
+		color:red;
+		text-decoration: none;  /* 밑줄 없애기 */
+	}
+	div.mydiv{	/* 그룹*/
+		border: solid blue 1px;
+	}
+	p,div{	/* 여러 그룹 지정 */
+		color: blue;
+		background-color: yellow;
+	}
+
+</style>
+</head>
+<body>
+	<h1>지금은 CSS선택창 연습 -1</h1>
+	<div class="mydiv">
+		별도 프로그램을 깔지 않아도 인터넷 브라우저상에서 화려한 그래픽 효과를 구현하며, 음악ㆍ동영상을 자유롭게
+		감상할 수 있다. 2004년부터 WHATWG (Web Hypertext Application Technology Working
+		Group)는 HTML 5를 HTML의 차기 핵심 표준으로 만들기 위한 세부 작업을 시작하였으며, 오는 2014년 기술표준으로
+		공식 발표할 예정이다. 이에 따라 최근 애플ㆍ마이크로소프트(MS), 구글, 페이스북 등 글로벌 IT 기업들은 HTML 5 시대
+		주도권을 잡기 위해 치열한 경쟁에 돌입했다. 대표적인 예로 세계 최대 소셜네트워크서비스 페이스북이 대만 스마트폰 업체 HTC와
+		공동으로 차세대 인터넷 규격인 <a href = "#">HTML 5</a>를 탑재한 페이스북폰을 이르면 2012년 말 내놓을 예정이다.
+		</div>
+	<div>
+		별도 프로그램을 깔지 않아도 인터넷 브라우저상에서 화려한 그래픽 효과를 구현하며, 음악ㆍ동영상을 자유롭게
+		감상할 수 있다. 2004년부터 WHATWG (Web Hypertext Application Technology Working
+		Group)는 HTML 5를 HTML의 차기 핵심 표준으로 만들기 위한 세부 작업을 시작하였으며, 오는 2014년 기술표준으로
+		공식 발표할 예정이다. 이에 따라 최근 애플ㆍ마이크로소프트(MS), 구글, 페이스북 등 글로벌 IT 기업들은 HTML 5 시대
+		주도권을 잡기 위해 치열한 경쟁에 돌입했다. 대표적인 예로 세계 최대 소셜네트워크서비스 페이스북이 대만 스마트폰 업체 HTC와
+		공동으로 차세대 인터넷 규격인 HTML 5를 탑재한 페이스북폰을 이르면 2012년 말 내놓을 예정이다.
+		</div>
+	<div class="mydiv">
+		별도 프로그램을 깔지 않아도 인터넷 브라우저상에서 화려한 그래픽 효과를 구현하며, 음악ㆍ동영상을 자유롭게 감상할 수
+		있다. 2004년부터 WHATWG (Web Hypertext Application Technology Working
+		Group)는<a href="#">HTML 5</a>를 HTML의 차기 핵심 표준으로 만들기 위한 세부 작업을 시작하였으며, 오는 2014년 기술표준으로
+		공식 발표할 예정이다. 
+		</div>
+		<!-- 1. 태그 안에 삽입(inline) -->
+		
+		<p style="color: purple;">
+		이에 따라 최근 애플ㆍ마이크로소프트(MS), 구글, 페이스북 등 글로벌 IT 기업들은 HTML 5 시대
+		주도권을 잡기 위해 치열한 경쟁에 돌입했다. 대표적인 예로 세계 최대 소셜네트워크서비스 페이스북이 대만 스마트폰 업체 HTC와
+		공동으로 차세대 인터넷 규격인 HTML 5를 탑재한 페이스북폰을 이르면 2012년 말 내놓을 예정이다.
+		</p>
+	<p>
+		별도 프로그램을 깔지 않아도 인터넷 브라우저상에서 화려한 그래픽 효과를 구현하며, 음악ㆍ동영상을 자유롭게
+		감상할 수 있다. 2004년부터 WHATWG (Web Hypertext Application Technology Working
+		Group)는 HTML 5를 HTML의 차기 핵심 표준으로 만들기 위한 세부 작업을 시작하였으며, 오는 2014년 기술표준으로
+		공식 발표할 예정이다. 이에 따라 최근 애플ㆍ마이크로소프트(MS), 구글, 페이스북 등 글로벌 IT 기업들은 HTML 5 시대
+		주도권을 잡기 위해 치열한 경쟁에 돌입했다. 대표적인 예로 세계 최대 소셜네트워크서비스 페이스북이 대만 스마트폰 업체 HTC와
+		공동으로 차세대 인터넷 규격인 <a href = "#">HTML 5</a>를 탑재한 페이스북폰을 이르면 2012년 말 내놓을 예정이다.
+		</p>
+		<p class="mydiv">
+			지금은 CSS 연습중.....
+		</p>
+</body>
+</html>

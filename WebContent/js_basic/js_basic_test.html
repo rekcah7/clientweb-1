@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 4. 외부문서에 정의된 자바스크립트를 실행하는 방법 -->
+<script type="text/javascript" src="../common/js/test.js"></script>
+<!-- 2. <head> 태그 안에 함수를 정의하고 필요한 곳에서 호출해서 사용하는 방법 -->
+<script type="text/javascript">
+	function test(){
+		alert("테스트")
+	}
+</script>
+</head>
+<body>
+	<!-- 1. body태그 안에 정의하고 사용하는 방법 -->
+	<script type="text/javascript">
+		//한 줄 주석
+		/* 여러줄 주석 입니다.
+		*/
+		
+		//기존 문서에 새로 뿌려진다. 디버깅은 어렵다.
+		document.write("<h1> 브라우저에 데이터 출력하기 - 연습용</h1");
+		test();
+		document.write("<h2>end</h2>");
+		test();
+		test();
+	
+	</script>
+	<!-- 3.  태그 내부에서 inLine으로 삽입(이벤트 핸들러에 연결) -->
+	<input type="button" value="자바스크립트 호출" onclick="test()">
+	<a href="javascript:test()">테스트</a>
+	<!-- 4.  외부문서에 정의된 자바스크립트 함수를 호출한다. -->
+	<input type="button" value="외부자바스크립트 호출" onclick="test2()">
+	
+</body>
+</html>
